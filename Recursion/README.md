@@ -32,3 +32,14 @@ are called and returned as a series of events happening consecutively.
 
 ### Multiple Recursion Calls
 * Fibonacci Number
+### Subsequences
+-> A contiguous ans noncontiguous sequences which folows a order
+arr[] -> [3,1,2]
+3 
+1
+2
+3,1
+1,2
+3,2 -> noncontiguous(does not follow the order) but subsequences
+3,1,2
+
