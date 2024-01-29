@@ -34,6 +34,31 @@ void printSubArray(int idx, vector<int> &ds, int countSum, int sum, int arr[], i
     ds.pop_back();
     printSubArray(idx + 1, ds, countSum, sum, arr, n);
 }
+
+
+void printSubArrayModified(int idx, vector<int> &ds, int countSum, int sum, int arr[], int n)
+{
+    if (idx == n)
+    {
+        if (countSum == sum)
+        {
+            for (auto it : ds)
+            {
+                cout << it << " ";
+            }
+            cout << endl;
+        }
+        return;
+    }
+    ds.push_back(arr[idx]);
+    countSum += arr[idx];
+    printSubArray(idx + 1, ds, countSum, sum, arr, n);
+    countSum -= arr[idx];
+    ds.pop_back();
+    printSubArray(idx + 1, ds, countSum, sum, arr, n);
+}
+
+
 int main()
 {
     int arr[] = {1, 2, 1};
