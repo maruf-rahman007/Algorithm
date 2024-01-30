@@ -36,7 +36,15 @@ void printSubArray(int idx, vector<int> &ds, int countSum, int sum, int arr[], i
 }
 
 
-void printSubArrayModified(int idx, vector<int> &ds, int countSum, int sum, int arr[], int n)
+
+/*
+Problem :
+    given an array and a sum
+    find and print only one sub arrays that can produce the sum
+*/
+
+
+bool printSubArrayModified(int idx, vector<int> &ds, int countSum, int sum, int arr[], int n)
 {
     if (idx == n)
     {
@@ -47,15 +55,21 @@ void printSubArrayModified(int idx, vector<int> &ds, int countSum, int sum, int 
                 cout << it << " ";
             }
             cout << endl;
+            return true;
         }
-        return;
+        return false;
     }
     ds.push_back(arr[idx]);
     countSum += arr[idx];
-    printSubArray(idx + 1, ds, countSum, sum, arr, n);
+    if(printSubArrayModified(idx + 1, ds, countSum, sum, arr, n)){
+        return true;
+    }
     countSum -= arr[idx];
     ds.pop_back();
-    printSubArray(idx + 1, ds, countSum, sum, arr, n);
+    if(printSubArrayModified(idx + 1, ds, countSum, sum, arr, n)){
+        return true;
+    }
+    return false;
 }
 
 
@@ -66,7 +80,12 @@ int main()
     vector<int> ds;
     int sum = 2;
 
-    printSubArray(0, ds, 0, sum, arr, n);
+    printSubArrayModified(0, ds, 0, sum, arr, n);
 
     return 0;
 }
+
+/*
+    Time complexity -> O(2^n)
+    Space Complexity -> O(n)
+*/
