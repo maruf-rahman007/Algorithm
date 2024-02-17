@@ -20,3 +20,7 @@
     O(n) -> Best 
 1. Take an element and check if it's in the current position or not 
 2. if not then start swaping till it can be swaped/j > 0 
+
+
+# Merge Sort 
+    Divide and Merge
