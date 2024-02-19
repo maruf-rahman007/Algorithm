@@ -24,3 +24,8 @@
 
 # Merge Sort 
     Divide and Merge
+
+# Quick Sort 
+    pick a pivot
+    plce it in the proper position/place
+    smaller on the left , larger on the right
