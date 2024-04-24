@@ -11,7 +11,7 @@ int main() {
     vector<int> sizes(N), values(N);
     for (int i = 0; i < N; ++i) {
         cin >> sizes[i];
-    }git
+    }
     for (int i = 0; i < N; ++i) {
         cin >> values[i];
     }
